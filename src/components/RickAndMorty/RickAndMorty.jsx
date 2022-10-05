@@ -16,14 +16,12 @@ function RickAndMorty() {
 
     useEffect(()=>{
         if(isLoading === true) {
-            setTimeout(()=>{
-                axios.get('character')
-                .then(data => {
-                    setCharacters(data.data.results);
-                    setIsLoading(false);
-                    setFirstLoad(false);
-                });
-            }, 500);
+            axios.get('character')
+            .then(data => {
+                setCharacters(data.data.results);
+                setIsLoading(false);
+                setFirstLoad(false);
+            });
         }
     },[firstLoad]);
 
